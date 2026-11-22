@@ -1,0 +1,13 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /posts/{postId} {
+      // Anyone visiting the portfolio can read published blog posts
+      allow read: if true;
+
+      // Only signed-in users (restrict to your own email in production) can write
+      allow create, update, delete: if request.auth != null;
+    }
+  }
+}
