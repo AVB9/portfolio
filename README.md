@@ -25,7 +25,7 @@ npm run dev
 
 ```bash
 npm run build
-npx firebase deploy
+firebase deploy --only hosting --project atharva-bedarkar
 ```
 
 ## Customizing Content
